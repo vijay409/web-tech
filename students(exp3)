@@ -1,0 +1,27 @@
+<%@ page import="java.util.*" %>
+<html><body>
+
+<h2>Student Marks</h2>
+
+<%
+    // Demo "Database"
+    String[][] data = {
+        {"101","Ravi","85"},
+        {"102","Meena","91"},
+        {"103","Kiran","77"}
+    };
+
+    out.println("<table border='1'>");
+    out.println("<tr><th>Roll No</th><th>Name</th><th>Marks</th></tr>");
+
+    for(String[] s : data){
+        out.println("<tr>");
+        out.println("<td>"+s[0]+"</td>");
+        out.println("<td>"+s[1]+"</td>");
+        out.println("<td>"+s[2]+"</td>");
+        out.println("</tr>");
+    }
+    out.println("</table>");
+%>
+
+</body></html>
