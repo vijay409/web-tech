@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Organic Store Lookup</h2>
+
+<input id="q" placeholder="Enter product name">
+<button onclick="find()">Search</button>
+
+<pre id="out"></pre>
+
+<script>
+const xml = `
+<stores>
+  <store><product>Rice</product><price>₹90/kg</price></store>
+  <store><product>Honey</product><price>₹150/bottle</price></store>
+  <store><product>Green Tea</product><price>₹120/box</price></store>
+</stores>`;
+
+const xmldoc = new DOMParser().parseFromString(xml, "text/xml");
+
+function find(){
+  let key = q.value.toLowerCase();
+  let nodes = xmldoc.getElementsByTagName("store");
+  let result = "";
+
+  for(let s of nodes){
+    let product = s.getElementsByTagName("product")[0].textContent;
+    let price = s.getElementsByTagName("price")[0].textContent;
+
+    if(product.toLowerCase().includes(key)){
+      result += product+" — "+price+"\n";
+    }
+  }
+  out.textContent = result || "No match";
+}
+</script>
+
+</body>
+</html>
