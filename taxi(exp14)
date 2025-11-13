@@ -1,0 +1,29 @@
+<%@ page import="java.util.*" %>
+<html><body>
+
+<h2>Call Taxi Booking Details</h2>
+
+<%
+    // Demo "Database"
+    String[][] taxi = {
+        {"T101","Ravi","Mini","12","₹120"},
+        {"T102","Meena","Sedan","20","₹300"},
+        {"T103","Kiran","SUV","15","₹300"}
+    };
+
+    out.println("<table border='1'>");
+    out.println("<tr><th>Booking ID</th><th>Name</th><th>Taxi Type</th><th>Distance (km)</th><th>Fare</th></tr>");
+
+    for(String[] t : taxi){
+        out.println("<tr>");
+        out.println("<td>"+t[0]+"</td>");
+        out.println("<td>"+t[1]+"</td>");
+        out.println("<td>"+t[2]+"</td>");
+        out.println("<td>"+t[3]+"</td>");
+        out.println("<td>"+t[4]+"</td>");
+        out.println("</tr>");
+    }
+    out.println("</table>");
+%>
+
+</body></html>
