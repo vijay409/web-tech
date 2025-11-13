@@ -1,0 +1,27 @@
+<%@ page import="java.util.*" %>
+<html><body>
+
+<h2>Employee Payroll Details</h2>
+
+<%
+    // Demo "Database"
+    String[][] emp = {
+        {"E101","Ravi","25000"},
+        {"E102","Meena","30000"},
+        {"E103","Kiran","28000"}
+    };
+
+    out.println("<table border='1'>");
+    out.println("<tr><th>Emp ID</th><th>Name</th><th>Salary (₹)</th></tr>");
+
+    for(String[] e : emp){
+        out.println("<tr>");
+        out.println("<td>"+e[0]+"</td>");
+        out.println("<td>"+e[1]+"</td>");
+        out.println("<td>"+e[2]+"</td>");
+        out.println("</tr>");
+    }
+    out.println("</table>");
+%>
+
+</body></html>
