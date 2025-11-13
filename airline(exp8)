@@ -1,0 +1,29 @@
+<%@ page import="java.util.*" %>
+<html><body>
+
+<h2>Airline Ticket Reservation</h2>
+
+<%
+    // Demo "Database"
+    String[][] flights = {
+        {"A101","Ravi","Chennai","Delhi","6000"},
+        {"A102","Meena","Mumbai","Goa","3500"},
+        {"A103","Kiran","Hyderabad","Kolkata","7200"}
+    };
+
+    out.println("<table border='1'>");
+    out.println("<tr><th>Flight No</th><th>Name</th><th>Source</th><th>Destination</th><th>Fare (₹)</th></tr>");
+
+    for(String[] f : flights){
+        out.println("<tr>");
+        out.println("<td>"+f[0]+"</td>");
+        out.println("<td>"+f[1]+"</td>");
+        out.println("<td>"+f[2]+"</td>");
+        out.println("<td>"+f[3]+"</td>");
+        out.println("<td>"+f[4]+"</td>");
+        out.println("</tr>");
+    }
+    out.println("</table>");
+%>
+
+</body></html>
