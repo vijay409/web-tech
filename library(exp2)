@@ -1,0 +1,39 @@
+index.html
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Digital Library Login</h2>
+
+<form action="Library" method="post">
+    <input type="hidden" name="count" value="0">
+    Name: <input name="username"><br><br>
+    <button>Enter</button>
+</form>
+
+</body>
+</html>
+Library.java (Servlet)
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Library extends HttpServlet {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    throws ServletException, IOException {
+
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+
+        String user = req.getParameter("username");
+        int count = Integer.parseInt(req.getParameter("count")) + 1;
+
+        out.println("<h2>Welcome, " + user + "</h2>");
+        out.println("<p>You visited " + count + " time(s)</p>");
+
+        out.println("<form method='post' action='Library'>");
+        out.println("<input type='hidden' name='count' value='" + count + "'>");
+        out.println("<input type='hidden' name='username' value='" + user + "'>");
+        out.println("<button>Visit Again</button>");
+        out.println("</form>");
+    }
+}
