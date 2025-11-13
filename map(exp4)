@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Indian States & Capitals</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/India_states_map.png"
+     usemap="#india" width="450">
+
+<map name="india">
+  <area shape="rect" coords="80,250,150,330" href="#"
+        onclick="show('Karnataka','Bengaluru'); return false;">
+  <area shape="rect" coords="120,150,200,230" href="#"
+        onclick="show('Maharashtra','Mumbai'); return false;">
+</map>
+
+<h3 id="info">Click on a State</h3>
+
+<script>
+function show(state, capital){
+  document.getElementById("info").innerHTML =
+      "State: " + state + " — Capital: " + capital;
+}
+</script>
+
+</body>
+</html>
