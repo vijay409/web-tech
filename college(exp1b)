@@ -1,0 +1,49 @@
+college.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Website</title>
+
+<!-- Embedded CSS -->
+<style>
+  .embedded-box {
+    background: #e0f7fa;
+    padding: 10px;
+    border: 1px solid #0097a7;
+  }
+</style>
+
+<!-- External CSS file -->
+<link rel="stylesheet" href="college.css">
+</head>
+
+<body>
+
+<h2>My College Website</h2>
+
+<!-- Inline CSS -->
+<div style="background:#fff3cd; padding:10px;">
+  <h3>Inline CSS Example</h3>
+  <p>This section uses inline styles.</p>
+</div>
+
+<!-- Embedded CSS -->
+<div class="embedded-box">
+  <h3>Embedded CSS Example</h3>
+  <p>This section uses CSS inside &lt;style&gt; tag.</p>
+</div>
+
+<!-- External CSS -->
+<div class="external-box">
+  <h3>External CSS Example</h3>
+  <p>This section uses college.css file.</p>
+</div>
+
+</body>
+</html>
+college.css
+.external-box {
+  background: #e8f5e9;
+  padding: 10px;
+  border: 1px solid #4caf50;
+}
