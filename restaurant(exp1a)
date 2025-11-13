@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Restaurant Combos</title>
+<style>
+  img { width: 500px; }
+  #info { margin-top: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Restaurant – Combo Offers</h2>
+
+<!-- Sample food image -->
+<img src="https://i.imgur.com/4AiXzf8.jpeg" usemap="#foods">
+
+<map name="foods">
+  <!-- Demo hotspots (adjust coords as needed) -->
+  <area shape="rect" coords="10,10,200,200" href="#" 
+        onclick="show('Veg Combo','₹199'); return false;">
+  <area shape="rect" coords="210,10,400,200" href="#" 
+        onclick="show('Non-Veg Combo','₹249'); return false;">
+</map>
+
+<div id="info">Click on a hotspot to see details</div>
+
+<script>
+function show(name, price) {
+  document.getElementById("info").innerHTML = 
+      "Combo: " + name + " — Price: " + price;
+}
+</script>
+
+</body>
+</html>
