@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Online Supermarket</h2>
+
+<button onclick="page('home')">Home</button>
+<button onclick="page('reg')">Register</button>
+<button onclick="page('cart')">Cart</button>
+
+<div id="screen"></div>
+
+<script>
+let cart=[];
+
+function page(p){
+    if(p=="home"){
+        screen.innerHTML = "<h3>Products</h3><button onclick='add()'>Add Apple</button>";
+    }
+    else if(p=="reg"){
+        screen.innerHTML = "<h3>Registration</h3><input id='name'><button onclick='save()'>Save</button>";
+    }
+    else {
+        screen.innerHTML = "<h3>Cart</h3>"+(cart.length?cart:"Empty");
+    }
+}
+
+function add(){ cart.push("Apple"); alert("Added"); }
+function save(){ alert("Registered: "+name.value); }
+
+page("home");
+</script>
+
+</body></html>
