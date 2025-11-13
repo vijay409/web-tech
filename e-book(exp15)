@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>E-Book Library Lookup</h2>
+
+<input id="q" placeholder="Enter book title">
+<button onclick="find()">Search</button>
+
+<pre id="out"></pre>
+
+<script>
+const xml = `
+<books>
+  <book><title>HTML Basics</title><author>John Doe</author></book>
+  <book><title>Java Programming</title><author>James Gosling</author></book>
+  <book><title>Python Guide</title><author>Guido van Rossum</author></book>
+</books>`;
+
+const xmldoc = new DOMParser().parseFromString(xml, "text/xml");
+
+function find(){
+  let key = q.value.toLowerCase();
+  let nodes = xmldoc.getElementsByTagName("book");
+  let result = "";
+
+  for(let b of nodes){
+    let title = b.getElementsByTagName("title")[0].textContent;
+    let author = b.getElementsByTagName("author")[0].textContent;
+
+    if(title.toLowerCase().includes(key)){
+      result += title+" — "+author+"\n";
+    }
+  }
+  out.textContent = result || "No match";
+}
+</script>
+
+</body>
+</html>
