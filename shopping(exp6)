@@ -1,0 +1,28 @@
+shopping.html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .embedded { background:#d0f0ff; padding:10px; }
+</style>
+<link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+<h2>Shopping Website</h2>
+
+<div style="background:#ffe0e0;padding:10px;">Inline Styled Product</div>
+
+<div class="embedded">Embedded Styled Product</div>
+
+<div class="external">External CSS Styled Product</div>
+
+</body>
+</html>
+shop.css
+.external {
+    background: #e8f5e9;
+    padding: 10px;
+    border: 1px solid #4caf50;
+}
