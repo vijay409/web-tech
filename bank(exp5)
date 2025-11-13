@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Online Banking Registration</h2>
+
+<form onsubmit="return validate()">
+    Username: <input id="u"><br><br>
+    Email: <input id="e"><br><br>
+    Password: <input id="p" type="password"><br><br>
+    <button>Register</button>
+</form>
+
+<p id="msg" style="color:red"></p>
+
+<script>
+function validate(){
+    let u = u.value.trim();
+    let e = e.value.trim();
+    let p = p.value.trim();
+
+    if(u.length < 3){ msg.innerHTML="Username too short"; return false;}
+    if(!/^\S+@\S+\.\S+$/.test(e)){ msg.innerHTML="Invalid email"; return false;}
+    if(p.length < 6){ msg.innerHTML="Password must be 6+ chars"; return false;}
+
+    alert("Registration Successful!");
+    return false;
+}
+</script>
+
+</body>
+</html>
