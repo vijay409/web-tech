@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Tourist Places Lookup</h2>
+
+<input id="q" placeholder="Enter place name">
+<button onclick="find()">Search</button>
+
+<pre id="out"></pre>
+
+<script>
+const xml = `
+<places>
+  <place><name>Taj Mahal</name><city>Agra</city></place>
+  <place><name>Charminar</name><city>Hyderabad</city></place>
+  <place><name>Qutub Minar</name><city>Delhi</city></place>
+</places>`;
+
+const xmldoc = new DOMParser().parseFromString(xml, "text/xml");
+
+function find(){
+  let key = q.value.toLowerCase();
+  let nodes = xmldoc.getElementsByTagName("place");
+  let result = "";
+
+  for(let p of nodes){
+    let name = p.getElementsByTagName("name")[0].textContent;
+    let city = p.getElementsByTagName("city")[0].textContent;
+
+    if(name.toLowerCase().includes(key)){
+      result += name+" — "+city+"\n";
+    }
+  }
+  out.textContent = result || "No match";
+}
+</script>
+
+</body>
+</html>
