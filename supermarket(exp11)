@@ -32,3 +32,35 @@ page("home");
 </script>
 
 </body></html>
+
+
+
+
+
+<!doctype html><body>
+<h2>Mini Supermarket (demo)</h2>
+<button onclick="show('home')">Home</button>
+<button onclick="show('reg')">Register</button>
+<button onclick="show('cart')">Cart</button>
+
+<div id="pane"></div>
+
+<script>
+let cart = [];
+function show(page){
+  const p = document.getElementById('pane');
+  if(page==='home'){
+    p.innerHTML = '<h3>Products</h3><button onclick="add(1)">Add Apple</button>';
+  } else if(page==='reg'){
+    p.innerHTML = '<h3>Register</h3><input id="name"><button onclick="reg()">Submit</button>';
+  } else {
+    p.innerHTML = '<h3>Cart</h3>' + (cart.length?cart.join(', '):'Empty') + '<br><button onclick="confirmOrder()">Confirm</button>';
+  }
+}
+function add(id){ cart.push('Apple'); alert('Added'); }
+function reg(){ alert('Registered: '+document.getElementById('name').value) }
+function confirmOrder(){ alert('Order placed (demo)'); cart=[]; show('cart') }
+show('home');
+</script>
+</body></html>
+
