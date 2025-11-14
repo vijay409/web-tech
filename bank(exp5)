@@ -26,6 +26,41 @@ function validate(){
     alert("Registration Successful!");
     return false;
 }
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<body>
+  <h2>Bank Registration (client side validation)</h2>
+  <form id="reg" onsubmit="return validate()">
+    Username: <input id="u"><br>
+    Email: <input id="e"><br>
+    Password: <input type="password" id="p"><br>
+    <button>Register</button>
+  </form>
+  <div id="msg" style="color:red"></div>
+  <script>
+    function validate(){
+      const u = document.getElementById('u').value.trim(),
+            e = document.getElementById('e').value,
+            p = document.getElementById('p').value;
+      if(u.length < 3){document.getElementById('msg').textContent='Username too short'; return false}
+      if(!/^\S+@\S+\.\S+$/.test(e)){document.getElementById('msg').textContent='Invalid email'; return false}
+      if(p.length < 6){document.getElementById('msg').textContent='Password min 6 chars'; return false}
+      alert('Registered (demo)'); return false; // false to prevent navigation in demo
+    }
+  </script>
+</body>
+</html>
+
 </script>
 
 </body>
